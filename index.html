@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0,
+                 maximum-scale=1.0, user-scalable=no"
+    >
+    <title>Class YOLO11 Realtime</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<div class="app">
+    <header>
+        <h1>🤖 Class YOLO11</h1>
+        <div id="status">Model not loaded</div>
+    </header>
+
+    <main>
+        <div class="camera-container">
+            <video id="video" autoplay playsinline muted></video>
+            <canvas id="overlay"></canvas>
+            <canvas
+                id="processingCanvas"
+                width="320"
+                height="320"
+                hidden
+            ></canvas>
+        </div>
+
+        <div class="information">
+            <div class="info-box">
+                <span>Model</span>
+                <strong>YOLO11n</strong>
+            </div>
+            <div class="info-box">
+                <span>FPS</span>
+                <strong id="fps">0</strong>
+            </div>
+            <div class="info-box">
+                <span>Objects</span>
+                <strong id="objects">0</strong>
+            </div>
+        </div>
+
+        <div id="detections" class="detections">No detection</div>
+
+        <div class="buttons">
+            <button id="loadButton">LOAD MODEL</button>
+            <button id="cameraButton">START CAMERA</button>
+            <button id="stopButton">STOP</button>
+        </div>
+    </main>
+
+    <footer>YOLO11n • ONNX Runtime Web</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
